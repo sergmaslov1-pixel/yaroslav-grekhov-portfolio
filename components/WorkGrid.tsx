@@ -27,7 +27,7 @@ export default function WorkGrid({ locale }: { locale: string }) {
       </div>
 
       {/* Grid */}
-      <div style={{ maxWidth: 1280, margin: '0 auto', padding: '64px 32px 120px', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 2 }} className="cases-grid">
+      <div style={{ maxWidth: 1280, margin: '0 auto', padding: '64px 32px 120px', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 2, alignItems: 'start' }} className="cases-grid">
         {filtered.map((c, i) => (
           <div key={i} style={{ position: 'relative', overflow: 'hidden' }} className="case-card">
             <div style={{ aspectRatio: c.ratio, overflow: 'hidden' }}>
