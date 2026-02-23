@@ -111,10 +111,10 @@ export default async function HomePage({
           <Link href={`/${locale}/work`} className="btn-outline">{t.home.portfolio.viewAll}</Link>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 2 }} className="works-grid">
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 2 }} className="works-grid">
           {t.cases.slice(0, 3).map((w, i) => (
-            <Link key={i} href={`/${locale}/work`} style={{ position: 'relative', overflow: 'hidden', display: 'block' }} className="work-item">
-              <div style={{ aspectRatio: w.ratio, overflow: 'hidden', transition: 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)' }}>
+            <Link key={i} href={`/${locale}/work`} style={{ position: 'relative', overflow: 'hidden', display: 'block', ...(i === 0 ? { gridRow: 'span 2' } : {}) }} className="work-item">
+              <div style={{ overflow: 'hidden', transition: 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)', ...(i === 0 ? { height: '100%' } : { aspectRatio: w.ratio }) }}>
                 <img src={w.src} alt={`${w.brand} — ${w.project}`} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: pos(w.src), display: 'block' }} />
               </div>
               <div className="work-overlay" style={{
@@ -133,8 +133,7 @@ export default async function HomePage({
         <style>{`
           .work-item:hover .work-overlay { opacity: 1 !important; }
           .work-item:hover > div { transform: scale(1.04); }
-          @media (max-width: 900px) { .works-grid { grid-template-columns: repeat(2, 1fr) !important; } }
-          @media (max-width: 540px) { .works-grid { grid-template-columns: 1fr !important; } }
+          @media (max-width: 640px) { .works-grid { grid-template-columns: 1fr !important; } .works-grid a:first-child { grid-row: auto !important; } }
         `}</style>
       </section>
 
