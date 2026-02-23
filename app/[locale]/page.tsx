@@ -114,7 +114,7 @@ export default async function HomePage({
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 2 }} className="works-grid">
           {t.cases.slice(0, 3).map((w, i) => (
             <Link key={i} href={`/${locale}/work`} style={{ position: 'relative', overflow: 'hidden', display: 'block' }} className="work-item">
-              <div style={{ aspectRatio: i === 0 ? '3/4' : w.ratio, overflow: 'hidden', transition: 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)' }}>
+              <div style={{ aspectRatio: w.ratio, overflow: 'hidden', transition: 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)' }}>
                 <img src={w.src} alt={`${w.brand} — ${w.project}`} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: pos(w.src), display: 'block' }} />
               </div>
               <div className="work-overlay" style={{
