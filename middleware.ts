@@ -38,9 +38,8 @@ export function middleware(request: NextRequest) {
 
   // Redirect to detected locale
   const locale = detectLocale(request);
-  const url = request.nextUrl.clone();
-  url.pathname = `/${locale}${pathname === '/' ? '' : pathname}`;
-  return NextResponse.redirect(url);
+  const newPath = `/${locale}${pathname === '/' ? '' : pathname}`;
+  return NextResponse.redirect(new URL(newPath, request.url));
 }
 
 export const config = {
