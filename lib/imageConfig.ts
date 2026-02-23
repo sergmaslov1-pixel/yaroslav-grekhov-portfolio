@@ -9,8 +9,8 @@ export const imgPos: Record<string, string> = {
   '/images/editorial-birkin.jpg':          'left center',
   // Diptych: Chanel CC portrait on RIGHT panel
   '/images/editorial-chanel-boutique.jpg': 'right center',
-  // Single: face at LEFT side (lying pose, head on left)
-  '/images/editorial-chanel-tweed.jpg':    'left center',
+  // Single: rotated portrait, head at top
+  '/images/editorial-chanel-tweed.jpg':    'center top',
   // Single: model on RIGHT, OROS card inset on lower-left
   '/images/editorial-fur-coat.jpg':        'right center',
   // Single: face in upper-right quadrant
